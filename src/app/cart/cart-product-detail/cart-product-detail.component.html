@@ -1,0 +1,11 @@
+<div>
+<!--  <img class="cart-img" src="{{productCartEntry.product.url}}" alt="No Image available">-->
+  <img src="{{productCartEntry.product.url}}" alt="No Image available">
+</div>
+<div class="cart-item-details">
+  <p>{{productCartEntry.product.name}}</p>
+  <p>{{productCartEntry.product.price}}</p>
+  <label class="number-input cart-item-details">Amount: </label>
+  <input type="number" min="0" max="100" class="number-input" [(ngModel)]="productCartEntry.quantity"
+         (ngModelChange)="quantityChangeEvent()">
+</div>

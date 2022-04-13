@@ -1,0 +1,11 @@
+<div *ngIf="productCartEntries.length === 0" class="empty-cart-message">Cart is empty</div>
+<div *ngIf="productCartEntries.length !== 0" class="cart-container">
+  <div class="cart-panel">
+    <app-cart-product-detail  *ngFor="let pce of productCartEntries"
+                              [productCartEntry]="pce" (changeEvent)="changeProductEntries($event)"></app-cart-product-detail>
+    <div>
+      <p>Total: {{getTotal()}} €</p>
+    </div>
+  </div>
+  <app-cart-user-detail class="form-margin"></app-cart-user-detail>
+</div>
